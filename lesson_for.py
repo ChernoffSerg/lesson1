@@ -1,4 +1,18 @@
-example_string = "Я учу язык python"
+from lesson_if import discounted
 
-for word in example_string.split():
-	print(f'Длина слова "{word}": {len(word)}')
+stock = [
+    {'name': 'iPhone 12', 'stock': 24, 'price': 65432.1,
+            'discount': 25},
+    {'name': 'Samsung Galaxy S21', 'stock': 8, 'price': 50000.0,
+            'discount': 10},
+    {'name': '', 'stock': 18, 'price': 10000.0, 'discount': 10}
+]
+
+for phone in stock:
+    phone["price_final"] = discounted(
+        phone["price"],
+        phone["discount"],
+        phone_name=phone["name"]
+    )
+		
+print(stock)
